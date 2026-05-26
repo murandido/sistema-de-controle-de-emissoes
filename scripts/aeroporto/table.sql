@@ -1,7 +1,7 @@
-CREATE TABLE aeroporto(
-    id_aeroporto UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-    codigo_iata INT UNIQUE,
-    nome VARCHAR(100),
-    cidade VARCHAR(100),
-    pais VARCHAR(100)
+CREATE TABLE aeroporto (
+    id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+    codigo_iata VARCHAR(3) UNIQUE NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+    cidade VARCHAR(100) NOT NULL,
+    pais VARCHAR(100) NOT NULL
 );
