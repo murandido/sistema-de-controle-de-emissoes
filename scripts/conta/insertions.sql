@@ -49,3 +49,25 @@ INSERT INTO conta (nome, programa_fidelidade, saldo_pontos, ativo) VALUES
 ('Juliana Ferreira Oliveira', 'TudoAzul', 363748, TRUE),
 ('Maria Ribeiro Vieira', 'Smiles', 422452, TRUE),
 ('Maria Pereira Vieira', 'Smiles', 187034, TRUE);
+
+-- insertions com erros propositais
+
+INSERT INTO conta (programa_fidelidade, saldo_pontos) VALUES ('Smiles', 10000);
+
+INSERT INTO conta (nome, saldo_pontos) VALUES ('Pedro Alvares', 50000);
+
+INSERT INTO conta (nome, programa_fidelidade) VALUES ('Maria Bethânia', 'Latam Pass');
+
+INSERT INTO conta (nome, programa_fidelidade, saldo_pontos) VALUES ('João Negativado', 'TudoAzul', -500);
+
+INSERT INTO conta (nome, programa_fidelidade, saldo_pontos) VALUES (NULL, 'Livelo', 20000);
+
+INSERT INTO conta (nome, programa_fidelidade, saldo_pontos) VALUES ('Carlos Sem Saldo', 'Esfera', NULL);
+
+INSERT INTO conta (nome, programa_fidelidade, saldo_pontos) VALUES ('Ana Texto', 'Smiles', 'cem');
+
+INSERT INTO conta (nome, programa_fidelidade, saldo_pontos) VALUES ('Felipe Andrade', 'Latam Pass', 1000);
+
+INSERT INTO conta (nome, programa_fidelidade, saldo_pontos, ativo) VALUES ('Marcos Boolean', 'TudoAzul', 1500, 'talvez');
+
+INSERT INTO conta (nome, programa_fidelidade, saldo_pontos) VALUES ('Lucas Caloteiro', 'Smiles', -10000);
