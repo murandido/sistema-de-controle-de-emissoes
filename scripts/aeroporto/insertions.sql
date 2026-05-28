@@ -21,7 +21,7 @@ INSERT INTO aeroporto (codigo_iata, nome, cidade, pais) VALUES
 ('VIX', 'Aeroporto Internacional de Vitória', 'Vitória', 'Brasil'),
 ('JFK', 'John F. Kennedy International Airport', 'Nova York', 'Estados Unidos'),
 ('LAX', 'Los Angeles International Airport', 'Los Angeles', 'Estados Unidos'),
-('ORD', 'O'Hare International Airport', 'Chicago', 'Estados Unidos'),
+('ORD', 'OHare International Airport', 'Chicago', 'Estados Unidos'),
 ('DFW', 'Dallas/Fort Worth International Airport', 'Dallas', 'Estados Unidos'),
 ('ATL', 'Hartsfield-Jackson Atlanta International Airport', 'Atlanta', 'Estados Unidos'),
 ('MIA', 'Miami International Airport', 'Miami', 'Estados Unidos'),
@@ -49,3 +49,25 @@ INSERT INTO aeroporto (codigo_iata, nome, cidade, pais) VALUES
 ('ORY', 'Paris Orly Airport', 'Paris', 'França'),
 ('LGW', 'Gatwick Airport', 'Londres', 'Reino Unido'),
 ('BCN', 'Josep Tarradellas Barcelona-El Prat Airport', 'Barcelona', 'Espanha');
+
+-- insercoes com erros propositais
+
+INSERT INTO aeroporto (nome, cidade, pais) VALUES ('Aeroporto Falso', 'São Paulo', 'Brasil');
+
+INSERT INTO aeroporto (codigo_iata, cidade, pais) VALUES ('ABC', 'Rio de Janeiro', 'Brasil');
+
+INSERT INTO aeroporto (codigo_iata, nome, pais) VALUES ('DEF', 'Aeroporto Teste', 'Brasil');
+
+INSERT INTO aeroporto (codigo_iata, nome, cidade) VALUES ('GHI', 'Aeroporto Incompleto', 'Curitiba');
+
+INSERT INTO aeroporto (codigo_iata, nome, cidade, pais) VALUES (NULL, 'Aero Nulo', 'Belo Horizonte', 'Brasil');
+
+INSERT INTO aeroporto (codigo_iata, nome, cidade, pais) VALUES ('ABCD', 'Aeroporto Letras Demais', 'Campinas', 'Brasil');
+
+INSERT INTO aeroporto (codigo_iata, nome, cidade, pais) VALUES ('GRU', 'Outro Guarulhos', 'Guarulhos', 'Brasil');
+
+INSERT INTO aeroporto VALUES ('ZZZ', 'Aeroporto Sem Colunas');
+
+INSERT INTO aeroporto (codigo_iata, nome, cidade, pais) VALUES ('XYZ', NULL, 'Brasília', 'Brasil');
+
+INSERT INTO aeroporto (codigo_iata, nome) VALUES ('WXY', 'Aeroporto Quase Lá');
