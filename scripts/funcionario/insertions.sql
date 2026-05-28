@@ -49,3 +49,25 @@ INSERT INTO funcionario (nome, email, ativo) VALUES
 ('Carlos Pereira Gomes', 'carlos.pereira.gomes@empresa.com', FALSE),
 ('André Barbosa Ribeiro', 'andré.barbosa.ribeiro@empresa.com', TRUE),
 ('Mateus Carvalho Pereira', 'mateus.carvalho.pereira@empresa.com', TRUE);
+
+-- inserts com erros propositais
+
+INSERT INTO funcionario (email) VALUES ('sem.nome@empresa.com');
+
+INSERT INTO funcionario (nome) VALUES ('Funcionario Sem Email');
+
+INSERT INTO funcionario (nome, email) VALUES (NULL, 'nulo@empresa.com');
+
+INSERT INTO funcionario (nome, email) VALUES ('Zé Ninguem', NULL);
+
+INSERT INTO funcionario (id, nome, email) VALUES (NULL, 'PK Nula', 'pk@empresa.com');
+
+INSERT INTO funcionario (id, nome, email) VALUES ('123-abc-nao-eh-uuid', 'UUID Invalido', 'uuid@empresa.com');
+
+INSERT INTO funcionario (nome, email, ativo) VALUES ('Falta Valor', 'falta@empresa.com');
+
+INSERT INTO funcionario (nome, email) VALUES ('Cópia', 'joao.silva@empresa.com');
+
+INSERT INTO funcionario (nome, email, ativo) VALUES ('Ativo Texto', 'texto@empresa.com', 'sim');
+
+INSERT INTO funcionario (ativo) VALUES (TRUE);
