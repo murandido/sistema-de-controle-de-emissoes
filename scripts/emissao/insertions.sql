@@ -249,3 +249,25 @@ INSERT INTO emissao (pnr, id_funcionario, id_conta, iata_origem, iata_destino, p
     (SELECT id FROM conta WHERE nome = 'Gustavo Almeida Alves'), 
     'LAX', 'ASU', 'Julia Costa Carvalho', 
     '2026-01-17 23:54:08', '2026-04-14 23:54:08', 20, 18260, 293, TRUE);
+
+-- inserts com erros propositais
+
+INSERT INTO emissao (id_funcionario, id_conta, iata_origem, iata_destino, passageiro_principal, data_emissao, data_voo, valor_milheiro, pontos_utilizados, taxas) VALUES (gen_random_uuid(), gen_random_uuid(), 'GRU', 'JFK', 'Passageiro', '2023-10-01', '2023-12-01', 25, 50000, 100);
+
+INSERT INTO emissao (pnr, id_funcionario, id_conta, iata_origem, iata_destino, passageiro_principal, data_emissao, data_voo, valor_milheiro, pontos_utilizados, taxas) VALUES ('ERR001', gen_random_uuid(), gen_random_uuid(), 'GRU', 'JFK', 'Passageiro', '2023-10-01', '2023-12-01', -10, 50000, 100);
+
+INSERT INTO emissao (pnr, id_funcionario, id_conta, iata_origem, iata_destino, passageiro_principal, data_emissao, data_voo, valor_milheiro, pontos_utilizados, taxas) VALUES ('ERR002', gen_random_uuid(), gen_random_uuid(), 'GRU', 'JFK', 'Passageiro', '2023-10-01', '2023-12-01', 25, -5000, 100);
+
+INSERT INTO emissao (pnr, id_funcionario, id_conta, iata_origem, iata_destino, passageiro_principal, data_emissao, data_voo, valor_milheiro, pontos_utilizados, taxas) VALUES ('ERR003', gen_random_uuid(), gen_random_uuid(), 'GRU', 'JFK', 'Passageiro', '2023-10-01', '2023-12-01', 25, 50000, -50);
+
+INSERT INTO emissao (pnr, id_funcionario, id_conta, iata_origem, iata_destino, passageiro_principal, data_emissao, data_voo, valor_milheiro, pontos_utilizados, taxas) VALUES ('ERR004', gen_random_uuid(), gen_random_uuid(), 'ZZZ', 'JFK', 'Passageiro', '2023-10-01', '2023-12-01', 25, 50000, 100);
+
+INSERT INTO emissao (pnr, id_funcionario, id_conta, iata_origem, iata_destino, passageiro_principal, data_emissao, data_voo, valor_milheiro, pontos_utilizados, taxas) VALUES ('ERR005', gen_random_uuid(), gen_random_uuid(), 'GRU', 'JFK', 'Passageiro', '2023-10-01', '2023-12-01', 25, 50000, 100);
+
+INSERT INTO emissao (pnr, id_funcionario, id_conta, iata_origem, iata_destino, passageiro_principal, data_emissao, valor_milheiro, pontos_utilizados, taxas) VALUES ('ERR006', gen_random_uuid(), gen_random_uuid(), 'GRU', 'JFK', 'Passageiro', '2023-10-01', 25, 50000, 100);
+
+INSERT INTO emissao (pnr, id_funcionario, id_conta, iata_origem, iata_destino, passageiro_principal, data_emissao, data_voo, valor_milheiro, pontos_utilizados, taxas) VALUES ('ERR007', gen_random_uuid(), gen_random_uuid(), 'GRU', 'JFK', NULL, '2023-10-01', '2023-12-01', 25, 50000, 100);
+
+INSERT INTO emissao (pnr, id_funcionario, id_conta, iata_origem, iata_destino, passageiro_principal, data_emissao, data_voo, valor_milheiro, pontos_utilizados) VALUES ('ERR008', gen_random_uuid(), gen_random_uuid(), 'GRU', 'JFK', 'Passageiro', '2023-10-01', '2023-12-01', 25, 50000);
+
+INSERT INTO emissao (pnr, id_funcionario, id_conta, iata_origem, iata_destino, passageiro_principal, data_emissao, data_voo, valor_milheiro, pontos_utilizados, taxas) VALUES ('ABC123', gen_random_uuid(), gen_random_uuid(), 'GRU', 'JFK', 'Passageiro', '2023-10-01', '2023-12-01', 25, 50000, 100);
