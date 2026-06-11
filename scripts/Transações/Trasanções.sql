@@ -86,8 +86,8 @@ WHERE pnr = 'RKQ4SV';
 
 UPDATE emissao
 SET iata_origem = 'PTY', iata_destino = 'BSB', passageiro_principal = 'Max Emilian Verstappen',
-data_emissao = '2026-06-13 11:26:38', data_voo = '2026-08-16 16:00:00', valor_milheiro = 30, 
-pontos_utilizados = 35085, taxas = 120, ativo = TRUE
+data_emissao = '2026-06-13 11:26:38', data_voo = '2026-08-16 16:00:00', valor_milheiro = 3000,
+pontos_utilizados = 35085, taxas = 12000, ativo = TRUE
 WHERE pnr = 'TMY4GP';
 
 UPDATE emissao
@@ -129,8 +129,8 @@ BEGIN TRANSACTION;
 
 UPDATE emissao
 SET iata_origem = 'PTY', iata_destino = 'BSB', passageiro_principal = 'Lionel Andrés Messi Cuccittini',
-data_emissao = '2026-04-19 18:20:38', data_voo = '2026-09-11 19:30:00', valor_milheiro = 50, 
-pontos_utilizados = 32385, taxas = 180, ativo = TRUE
+data_emissao = '2026-04-19 18:20:38', data_voo = '2026-09-11 19:30:00', valor_milheiro = 5000,
+pontos_utilizados = 32385, taxas = 18000, ativo = TRUE
 WHERE pnr = '0VUGKV';
 
 UPDATE emissao
