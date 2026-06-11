@@ -1,23 +1,14 @@
 BEGIN TRANSACTION;
 
-UPDATE emissao
-SET iata_origem = 'MCZ', iata_destino = 'CGR', passageiro_principal = 'Julia Costa Carvalho', 
-data_emissao = '2026-04-18 22:30:24', data_voo = '2026-06-06 16:30:00', valor_milheiro = 20, 
-pontos_utilizados = 28617, taxas = 230, ativo = TRUE
-WHERE pnr = 'T1TDGN';
+INSERT INTO funcionario (nome, email, ativo) VALUES
+    ('Pedro Henrique Alves', 'pedro.henrique.alves@empresa.com', TRUE),
+    ('Isabela Martins Correia', 'isabela.martins.correia@empresa.com', TRUE),
+    ('Rafael Cunha Nogueira', 'rafael.cunha.nogueira@empresa.com', FALSE);
 
-UPDATE emissao
-SET passageiro_principal = 'Marcos Paulo Lopes' 
-WHERE pnr = '0VUGKV';
-
-UPDATE emissao
-SET taxas = 67 
-WHERE pnr = 'XHRO19';
-
-UPDATE emissao
-SET iata_origem = 'BPS', iata_destino = 'BSB', data_emissao = '2026-03-21 16:36:28',
-data_voo = '2026-07-16 19:00:00', taxas = 187
-WHERE pnr = 'R21520';
+INSERT INTO conta (nome, programa_fidelidade, saldo_pontos, ativo) VALUES
+    ('Pedro Henrique Alves', 'Smiles', 150000, TRUE),
+    ('Isabela Martins Correia', 'Latam Pass', 320000, TRUE),
+    ('Rafael Cunha Nogueira', 'TudoAzul', 0, FALSE);
 
 COMMIT;
 
@@ -170,7 +161,26 @@ UPDATE emissao
 SET passageiro_principal = 'Leia Organa', pontos_utilizados = 20000
 WHERE pnr = 'TMY4GP';
 
-SELECT * FROM emissao 
+SELECT * FROM emissao
 WHERE pnr IN ('NR9IS2','QVZFV8','SOF1GG','1JP70L','TMY4GP');
+
+COMMIT;
+
+--------------------------------------------------------------------------------------------------
+
+BEGIN TRANSACTION;
+
+DELETE FROM emissao WHERE pnr IN ('BRCL47', 'UHZ6A8', 'D5SOWO');
+
+SAVEPOINT sp1;
+
+DELETE FROM emissao WHERE pnr IN ('CT2CXI', 'AQ8H3X', '9UOE3T');
+
+SAVEPOINT sp2;
+
+-- Lote a ser desfeito
+DELETE FROM emissao WHERE pnr IN ('RCXN22', 'H3FNBD', 'JARJI8');
+
+ROLLBACK TO sp2;
 
 COMMIT;
