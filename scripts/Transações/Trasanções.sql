@@ -78,7 +78,12 @@ WHERE email = 'ricardo.rodrigues.fernandes@empresa.com';
 ROLLBACK;
 
 SELECT * FROM funcionario 
-WHERE email IN ('camila.ribeiro.barbosa@empresa.com','bruna.lima.oliveira@empresa.com','carlos.oliveira.lopes@empresa.com','ricardo.rodrigues.fernandes@empresa.com');
+WHERE email IN (
+    'camila.ribeiro.barbosa@empresa.com',
+    'bruna.lima.oliveira@empresa.com',
+    'carlos.oliveira.lopes@empresa.com',
+    'ricardo.rodrigues.fernandes@empresa.com'
+);
 
 --------------------------------------------------------------------------------------------------
 
